@@ -13,7 +13,7 @@ class AuthViewModel(
     private val repository: UserRepository
 ) : ViewModel() {
 
-    val TAG = "AuthViewModel"
+    private val TAG = "AuthViewModel"
     var email: String? = null
     var password: String? = null
     var authListener: AuthListener? = null
