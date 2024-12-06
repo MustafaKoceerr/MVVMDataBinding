@@ -6,8 +6,9 @@ import com.kocerlabs.mvvmdatabinding.data.network.MyApi
 import com.kocerlabs.mvvmdatabinding.data.network.SafeApiRequest
 import com.kocerlabs.mvvmdatabinding.data.network.model.UserRequest
 import com.kocerlabs.mvvmdatabinding.data.network.model.UserResponse
+import javax.inject.Inject
 
-class UserRepository(
+class UserRepository @Inject constructor(
     private val api: MyApi,
     private val database: AppDatabase
 ) : SafeApiRequest() {

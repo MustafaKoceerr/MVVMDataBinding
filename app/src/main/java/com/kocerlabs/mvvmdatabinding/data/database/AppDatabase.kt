@@ -10,7 +10,7 @@ import com.kocerlabs.mvvmdatabinding.data.database.entity.User
     entities = arrayOf(User::class),
     version = 1
 )
-abstract class AppDatabase : RoomDatabase() {
+abstract class AppDatabase() : RoomDatabase() {
 
     // tum DAO'ların için abstract fonksiyonlar oluşturmalısın.
 

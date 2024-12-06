@@ -4,14 +4,15 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import com.kocerlabs.mvvmdatabinding.util.NoInternetException
+import dagger.hilt.android.qualifiers.ApplicationContext
 import okhttp3.Interceptor
 import okhttp3.Response
+import javax.inject.Inject
 
-class NetworkConnectionInterceptor(
-    private val context: Context
+class NetworkConnectionInterceptor @Inject constructor(
+    @ApplicationContext private val context: Context // Context'i property olarak tanımlıyoruz
 ) : Interceptor {
 
-    private val applicationContext = context.applicationContext
     override fun intercept(chain: Interceptor.Chain): Response {
         if (!isInternetAvailable(context)) {
             throw NoInternetException("Make sure you have an active data connection")

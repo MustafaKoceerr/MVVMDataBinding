@@ -8,8 +8,12 @@ import com.kocerlabs.mvvmdatabinding.util.ApiException
 import com.kocerlabs.mvvmdatabinding.util.Coroutines
 import com.kocerlabs.mvvmdatabinding.util.NoInternetException
 import com.kocerlabs.mvvmdatabinding.util.toUser
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class AuthViewModel(
+
+@HiltViewModel
+class AuthViewModel @Inject constructor(
     private val repository: UserRepository
 ) : ViewModel() {
 
